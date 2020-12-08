@@ -28,11 +28,15 @@
           <li class="nav-item">
             <a class="nav-link" href="{{ link[1] | relative_url }}">{{ link[0] }}</a>
           </li>
+          <li class="nav-item"></li>
         {%- endif -%}
       {%- endfor -%}
     </ul>
   </div>
-
+  <div id="change-skin" title="Toggle Night Mode">
+    <span class="skin-btn dark-mode">🌙</span>
+    <span class="skin-btn light-mode">☀️</span>
+  </div>
   {% if site.navbar-extra %}
     {% for file in site.navbar-extra %}
       {% include {{ file }} %}
