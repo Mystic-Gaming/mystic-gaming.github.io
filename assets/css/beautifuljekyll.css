@@ -2,6 +2,7 @@
 layout: null
 ---
 
+@import url("skin-switch.css");
 @import url("pygment_highlights.css");
 
 /* --- General --- */
