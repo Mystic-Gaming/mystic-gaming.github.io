@@ -39,13 +39,13 @@ round-avatar: true
 # Select the social network links that you want to show in the footer.
 # Uncomment the links you want to show and add your information to each one.
 social-network-links:
-  email: "someone@example.com"
-  facebook: deanattali
-  github: daattali
-  twitter: daattali
-  patreon: DeanAttali
-  youtube: c/daattali
-#  reddit: yourname
+#  email: "someone@example.com"
+#  facebook: deanattali
+  github: mystic-gaming
+  twitter: MNinja808
+#  patreon: DeanAttali
+  youtube: channel/UCIj04An_BKrtD5A0F5XZQlw
+  reddit: DoctorFoot_
 #  linkedin: daattali
 #  xing: yourname
 #  stackoverflow: "3943160/daattali"
@@ -53,7 +53,7 @@ social-network-links:
 #  instagram: deanat78
 #  spotify: yourname
 #  telephone: +14159998888
-#  steam: deanat78
+  steam: MysticNinja808
 #  twitch: yourname
 #  yelp: yourname
 #  telegram: yourname
@@ -64,7 +64,8 @@ social-network-links:
 
 # If you want to show a link to an RSS in the footer, add the site description here.
 # If you don't want to show an RSS link, remove the following line.
-rss-description: This website is a virtual proof that I'm awesome
+rss-description: "MysticGaming's Website"
+
 
 # --- General options --- #
 
@@ -73,14 +74,14 @@ share-links-active:
   twitter: true
   facebook: true
   linkedin: true
-  vk: false
+  vk: true
 
 # How to display the link to your website in the footer
 # Remove this if you don't want a link in the footer
-url-pretty: "MyWebsite.com"
+url-pretty: "mystic-gaming.github.io"
 
 # Excerpt word length - Truncate the excerpt of each post on the feed page to the specified number of words
-excerpt_length: 50
+excerpt_length: 40
 
 # Whether or not to show an excerpt for every blog post in the feed page
 feed_show_excerpt: true
@@ -155,11 +156,11 @@ footer-link-col: "#404040"
 # "repository" (make sure the repository is public), (2) Enable Issues in your repository,
 # (3) Install the Utterances app in your repository https://github.com/apps/utterances
 # See more details about the parameters below at https://utteranc.es/
-#utterances:
-#  repository: # GitHub username/repository eg. "daattali/beautiful-jekyll"
-#  issue-term: title   # Mapping between blog posts and GitHub issues
-#  theme: github-light # Utterances theme
-#  label: blog-comments # Label that will be assigned to GitHub Issues created by Utterances
+utterances:
+  repository: "Mystic-Gaming/mystic-gaming.github.io"
+  issue-term: title   # Mapping between blog posts and GitHub issues
+  theme: github-light # Utterances theme
+  label: blog comment # Label that will be assigned to GitHub Issues created by Utterances
 
 # To use Staticman comments, first invite `staticmanlab` as a collaborator to your repository and
 # accept the invitation by going to `https://staticman3.herokuapp.com/v3/connect/github/<username>/<repo-name>`.
@@ -189,7 +190,7 @@ date_format: "%B %-d, %Y"
 timezone: "America/Toronto"
 markdown: kramdown
 highlighter: rouge
-permalink: /:year-:month-:day-:title/
+permalink: /:title/
 paginate: 5
 
 kramdown:
@@ -203,8 +204,10 @@ defaults:
       type: "posts"
     values:
       layout: "post"
-      comments: true  # add comments to all blog posts
-      social-share: true # add social media sharing buttons to all blog posts
+      comments: true
+      social-share: true
+      readtime: true
+      permalink: /blog/:title/
   -
     scope:
       path: "" # any file that's not a post will be a "page" layout by default
@@ -213,14 +216,9 @@ defaults:
 
 # Exclude these files from production site
 exclude:
-  - CHANGELOG.md
   - CNAME
   - Gemfile
   - Gemfile.lock
-  - LICENSE
-  - README.md
-  - screenshot.png
-  - docs/
 
 plugins:
   - jekyll-paginate
@@ -228,4 +226,3 @@ plugins:
 
 # Beautiful Jekyll / Dean Attali
 # 2fc73a3a967e97599c9763d05e564189
-
