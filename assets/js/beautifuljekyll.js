@@ -1,5 +1,21 @@
-// Dean Attali / Beautiful Jekyll 2020
+// Dean Attali / Beautiful Jekyll 2020 & EthanMcBloxxer
 
+function getCookie(cname) {
+  var name = cname + "=";
+  var decodedCookie = decodeURIComponent(document.cookie);
+  var ca = decodedCookie.split(';');
+  for(var i = 0; i <ca.length; i++) {
+    var c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
+var isDarkMode
 var BeautifulJekyllJS = {
 
   bigImgEl : null,
@@ -7,6 +23,7 @@ var BeautifulJekyllJS = {
 
   init : function() {
     setTimeout(BeautifulJekyllJS.initNavbar, 10);
+    setTimeout(BeautifulJekyllJS.initCookies, 1);
 
     // Shorten the navbar after scrolling a little bit down
     $(window).scroll(function() {
@@ -89,6 +106,16 @@ var BeautifulJekyllJS = {
       }
     }
   },
+  
+  initCookies : function() {
+    if (getCookie("dark") == null) {
+      document.cookie = "dark=false";
+      isDarkMode = false;
+    } else if (getCookie("dark") == "true") {
+      isDarkMode = true;
+      $("body").toggleClass("page-dark-mode");
+    }
+  },
 
   getImgInfo : function() {
     var randNum = Math.floor((Math.random() * BeautifulJekyllJS.numImgs) + 1);
@@ -111,6 +138,16 @@ var BeautifulJekyllJS = {
   }
 };
 
+
 // 2fc73a3a967e97599c9763d05e564189
 
 document.addEventListener('DOMContentLoaded', BeautifulJekyllJS.init);
+var isDarkMode = false;
+$(function() {
+  $('#change-skin').on('click', function () {
+    isDarkMode = !isDarkMode;
+    document.cookie = "dark=" + isDarkMode + "; path=/";
+    $("body").toggleClass("page-dark-mode");
+    BeautifulJekyllJS.initNavbar();
+  });
+});
